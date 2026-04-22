@@ -483,11 +483,14 @@
     var mainEl = document.getElementById('main-content');
     var titleEl = document.getElementById('page-title');
 
-    // Extract city slug from path: /delhi  →  'delhi'
-    var city = location.pathname.replace(/^\/|\/$/g, '').split('/')[0].toLowerCase();
+    var KNOWN_CITIES = ['delhi', 'mumbai', 'bangalore', 'hyderabad', 'chennai'];
+
+    // Extract city slug from path: /delhi → 'delhi', /static-metro-qr/delhi → 'delhi'
+    var parts = location.pathname.replace(/^\/|\/$/g, '').split('/');
+    var city = parts.filter(function (p) { return KNOWN_CITIES.indexOf(p) !== -1; })[0] || '';
 
     if (!city) {
-      renderStatus('empty', '', 'No city specified. Please use a valid link.');
+      renderStatus('empty', 'No city specified', 'Please scan a QR code at your nearest metro station.');
     } else {
       var label = city.charAt(0).toUpperCase() + city.slice(1);
       titleEl.textContent = 'Metro Tickets — ' + label;
