@@ -490,7 +490,9 @@
     var city = parts.filter(function (p) { return KNOWN_CITIES.indexOf(p) !== -1; })[0] || '';
 
     if (!city) {
-      renderStatus('empty', 'No city specified', 'Please scan a QR code at your nearest metro station.');
+      titleEl.textContent = 'Select Your City';
+      document.title = 'Metro Discover | ONDC';
+      renderCityList();
     } else {
       var label = city.charAt(0).toUpperCase() + city.slice(1);
       titleEl.textContent = 'Metro Tickets — ' + label;
@@ -516,6 +518,30 @@
           renderStatus('error', 'Something went wrong',
             "We couldn’t load the seller list.\nPlease check your connection and try again.");
         });
+    }
+
+    function renderCityList() {
+      var cities = [
+        { label: 'Delhi',     slug: 'delhi' },
+        { label: 'Mumbai',    slug: 'mumbai' },
+        { label: 'Bangalore', slug: 'bangalore' },
+        { label: 'Hyderabad', slug: 'hyderabad' },
+        { label: 'Chennai',   slug: 'chennai' }
+      ];
+      var arrow = '<span class="seller-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>';
+      var items = cities.map(function (c) {
+        return '<li class="seller-item"><a href="' + c.slug + '/">' +
+          '<span class="seller-name"><span class="seller-dot"></span>' + c.label + '</span>' +
+          arrow + '</a></li>';
+      }).join('');
+      mainEl.innerHTML =
+        '<div class="seller-card">' +
+        '<div class="seller-card-header">' +
+        '<div class="seller-card-header-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>' +
+        '<div class="seller-card-header-text"><h2>Select your city to find ticket sellers</h2></div>' +
+        '</div>' +
+        '<ul class="seller-list">' + items + '</ul>' +
+        '</div>';
     }
 
     function renderStatus(type, title, body) {
