@@ -1,0 +1,25 @@
+{
+  "delhi": [
+    { "name": "Paytm",    "url": "https://paytm.com/metro/delhi" },
+    { "name": "PhonePe",  "url": "https://www.phonepe.com/metro" },
+    { "name": "Amazon",   "url": "https://www.amazon.in/metro" }
+  ],
+  "mumbai": [
+    { "name": "Paytm",   "url": "https://paytm.com/metro/mumbai" },
+    { "name": "PhonePe", "url": "https://www.phonepe.com/metro" },
+    { "name": "Zomato",  "url": "https://www.zomato.com" }
+  ],
+  "bangalore": [
+    { "name": "Paytm",    "url": "https://paytm.com/metro/bangalore" },
+    { "name": "PhonePe",  "url": "https://www.phonepe.com/metro" },
+    { "name": "Swiggy",   "url": "https://www.swiggy.com" }
+  ],
+  "hyderabad": [
+    { "name": "Paytm",   "url": "https://paytm.com/metro/hyderabad" },
+    { "name": "Amazon",  "url": "https://www.amazon.in/metro" }
+  ],
+  "chennai": [
+    { "name": "PhonePe", "url": "https://www.phonepe.com/metro" },
+    { "name": "Amazon",  "url": "https://www.amazon.in/metro" }
+  ]
+}
