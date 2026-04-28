@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metro Tickets — Kochi</title>
+  <meta name="description" content="Buy Kochi Metro tickets from an authorised ONDC seller." />
+  <link rel="icon" type="image/svg+xml" href="../public/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: #F4F6F9;
+      color: #1E293B;
+      min-height: 100dvh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .app-root {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Navbar ── */
+    .ondc-navbar {
+      width: 100%;
+      background: #fff;
+      border-bottom: 1px solid #e2e8f0;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, .06);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .ondc-navbar-inner {
+      max-width: 580px;
+      margin: 0 auto;
+      height: 64px;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .ondc-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .ondc-logo-img {
+      height: 44px;
+      width: auto;
+      display: block;
+    }
+
+    .ondc-navbar-product {
+      font-size: .75rem;
+      font-weight: 600;
+      color: #64748b;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      border-left: 1.5px solid #e2e8f0;
+      padding-left: 14px;
+    }
+
+    /* ── Hero header ── */
+    .header {
+      width: 100%;
+      background: linear-gradient(140deg, #1c75bc 0%, #0e9cd8 60%, #00aeef 100%);
+      padding: 36px 16px 32px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .header-hero {
+      max-width: 580px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      text-align: center;
+    }
+
+    .header-logo {
+      width: 108px;
+      height: 108px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .metro-icon-svg {
+      width: 72px;
+      height: 72px;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, .25));
+      animation: metro-float 3s ease-in-out infinite;
+    }
+
+    @keyframes metro-float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-5px); }
+    }
+
+    .header-text {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .header-title {
+      font-size: 1.65rem;
+      font-weight: 800;
+      letter-spacing: -.5px;
+      color: #fff;
+      line-height: 1.15;
+    }
+
+    .header-subtitle {
+      font-size: .9rem;
+      color: rgba(255, 255, 255, .85);
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    /* ── Main content ── */
+    .app-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 28px 16px calc(32px + env(safe-area-inset-bottom, 0px));
+    }
+
+    /* ── Seller card ── */
+    .seller-card {
+      width: 100%;
+      max-width: 520px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 2px 12px rgba(0, 70, 150, .07), 0 8px 40px rgba(0, 70, 150, .08);
+      overflow: hidden;
+    }
+
+    .seller-card-header {
+      padding: 18px 18px 14px;
+      border-bottom: 1px solid #e8f0f8;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .seller-card-header-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #dce8ff, #e8f0fe);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .seller-card-header-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: #1c75bc;
+    }
+
+    .seller-card-header-text h2 {
+      font-size: .95rem;
+      font-weight: 700;
+      color: #0d2137;
+      line-height: 1.3;
+    }
+
+    .seller-list {
+      list-style: none;
+      padding: 10px 12px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .seller-item a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
+      min-height: 64px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #0d2137;
+      font-weight: 600;
+      font-size: .97rem;
+      border: 1.5px solid #e8f0f8;
+      background: #fafbff;
+      box-shadow: inset 3px 0 0 #00aeef;
+      transition: background .15s, border-color .15s, box-shadow .15s, transform .1s;
+    }
+
+    .seller-item a:hover {
+      background: #eef4ff;
+      border-color: #bad3f5;
+      box-shadow: inset 3px 0 0 #1c75bc, 0 4px 16px rgba(28, 117, 188, .13);
+      transform: translateY(-1px);
+    }
+
+    .seller-item a:active {
+      transform: translateY(0);
+      background: #deeaff;
+      box-shadow: inset 3px 0 0 #1559a0;
+    }
+
+    .seller-name {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .seller-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: #fff;
+      border: 1px solid #e8f0f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+      padding: 5px;
+    }
+
+    .seller-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .seller-label {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .seller-arrow {
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      background: #e8f0fe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background .15s;
+    }
+
+    .seller-item a:hover .seller-arrow,
+    .seller-item a:active .seller-arrow {
+      background: #1c75bc;
+    }
+
+    .seller-arrow svg {
+      width: 13px;
+      height: 13px;
+      stroke: #1c75bc;
+      transition: stroke .15s;
+    }
+
+    .seller-item a:hover .seller-arrow svg,
+    .seller-item a:active .seller-arrow svg {
+      stroke: #fff;
+    }
+
+    /* ── Footer ── */
+    .app-footer {
+      background: #0D2137;
+      padding: 20px 16px calc(20px + env(safe-area-inset-bottom, 0px));
+    }
+
+    .app-footer-inner {
+      max-width: 580px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: .73rem;
+      color: rgba(255, 255, 255, .5);
+      letter-spacing: .025em;
+      text-align: center;
+    }
+
+    .app-footer-brand {
+      color: #00aeef;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+
+    .app-footer-sep {
+      color: rgba(255, 255, 255, .25);
+    }
+
+    /* ── Responsive ── */
+    @media (min-width: 640px) {
+      .ondc-navbar-inner { padding: 0 24px; }
+      .header { padding: 48px 24px 40px; }
+      .header-logo { width: 124px; height: 124px; }
+      .metro-icon-svg { width: 84px; height: 84px; }
+      .header-title { font-size: 1.9rem; }
+      .app-content { padding: 36px 24px 48px; }
+      .seller-card-header { padding: 20px 24px 16px; }
+      .seller-list { padding: 12px 16px 16px; gap: 8px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app-root">
+
+    <!-- Navbar -->
+    <nav class="ondc-navbar" aria-label="ONDC">
+      <div class="ondc-navbar-inner">
+        <a class="ondc-logo" href="https://ondc.org" target="_blank" rel="noopener noreferrer"
+          aria-label="ONDC – Open Network for Digital Commerce">
+          <img src="../public/ondc-logo.svg" alt="ONDC" class="ondc-logo-img" height="34" />
+        </a>
+        <span class="ondc-navbar-product">Metro Discover</span>
+      </div>
+    </nav>
+
+    <!-- Hero header -->
+    <header class="header">
+      <div class="header-hero">
+        <div class="header-logo">
+          <svg fill="#000000" viewBox="0 -8 72 72" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <title>metro-front</title>
+              <path
+                d="M48.89,48.14h1.27a6,6,0,0,0,6-6v-36a6,6,0,0,0-6-6H21.84a6,6,0,0,0-6,6v36a6,6,0,0,0,6,6h1.27L14.55,55.8H20l2.74-2.45H49.31l2.74,2.45h5.4ZM48,44.45a3,3,0,1,1,3-3A2.95,2.95,0,0,1,48,44.45Zm-18.72-42H42.71a1.65,1.65,0,0,1,0,3.3H29.29a1.65,1.65,0,1,1,0-3.3ZM18.84,26.25V11.15a3,3,0,0,1,3-3H50.16a3,3,0,0,1,3,3v15.1a3,3,0,0,1-3,3H21.84A3,3,0,0,1,18.84,26.25ZM21,41.5a3,3,0,1,1,2.95,3A2.95,2.95,0,0,1,21,41.5Zm5.67,8.25,1.78-1.61H43.58l1.71,1.61Z">
+              </path>
+            </g>
+          </svg>
+        </div>
+        <div class="header-text">
+          <h1 class="header-title">Metro Tickets — Kochi</h1>
+          <p class="header-subtitle">Choose an seller to buy your ticket</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Seller list -->
+    <main class="app-content">
+      <div class="seller-card">
+        <div class="seller-card-header">
+          <div class="seller-card-header-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+          </div>
+          <div class="seller-card-header-text">
+            <h2>Tap any seller to open their ticket portal</h2>
+          </div>
+        </div>
+
+        <ul class="seller-list">
+          <li class="seller-item">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <span class="seller-name">
+                <span class="seller-logo"><img src="../public/assets/buyers/EaseMyTrip%20Logo.svg" alt="EaseMyTrip" /></span>
+                <span class="seller-label">EaseMyTrip</span>
+              </span>
+              <span class="seller-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </span>
+            </a>
+          </li>
+          <li class="seller-item">
+            <a href="https://milesandkilometres.com/metros.html" target="_blank" rel="noopener noreferrer">
+              <span class="seller-name">
+                <span class="seller-logo"><img src="../public/assets/buyers/miles_kilometres.png" alt="Miles &amp; Kilometres" /></span>
+                <span class="seller-label">Miles &amp; Kilometres</span>
+              </span>
+              <span class="seller-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </span>
+            </a>
+          </li>
+          <li class="seller-item">
+            <a href="https://nammayatri.in/u/?vp=metroBooking" target="_blank" rel="noopener noreferrer">
+              <span class="seller-name">
+                <span class="seller-logo"><img src="../public/assets/buyers/nammaYatrilogo.svg" alt="Namma Yatri" /></span>
+                <span class="seller-label">Namma Yatri</span>
+              </span>
+              <span class="seller-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </span>
+            </a>
+          </li>
+          <li class="seller-item">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <span class="seller-name">
+                <span class="seller-logo"><img src="../public/assets/buyers/rapido.jpg" alt="Rapido" /></span>
+                <span class="seller-label">Rapido</span>
+              </span>
+              <span class="seller-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </span>
+            </a>
+          </li>
+          <li class="seller-item">
+            <a href="https://m6pe.app.link/6r5WCiEJ3Qb" target="_blank" rel="noopener noreferrer">
+              <span class="seller-name">
+                <span class="seller-logo"><img src="../public/assets/buyers/red_bus.jpg" alt="redBus" /></span>
+                <span class="seller-label">redBus</span>
+              </span>
+              <span class="seller-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </span>
+            </a>
+          </li>
+          <li class="seller-item">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <span class="seller-name">
+                <span class="seller-logo"><img src="../public/assets/buyers/tummoc.png" alt="Tummoc" /></span>
+                <span class="seller-label">Tummoc</span>
+              </span>
+              <span class="seller-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </span>
+            </a>
+          </li>
+          <li class="seller-item">
+            <a href="https://cutt.ly/yatri-a79" target="_blank" rel="noopener noreferrer">
+              <span class="seller-name">
+                <span class="seller-logo"><img src="../public/assets/buyers/yatri_travel.jpg" alt="Yatri" /></span>
+                <span class="seller-label">Yatri</span>
+              </span>
+              <span class="seller-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="app-footer-inner">
+        <span class="app-footer-brand">Powered by ONDC</span>
+        <span class="app-footer-sep">&nbsp;·&nbsp;</span>
+        Open Network for Digital Commerce
+      </div>
+    </footer>
+
+  </div>
+</body>
+
+</html>
