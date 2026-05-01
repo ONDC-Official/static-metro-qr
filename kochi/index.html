@@ -194,45 +194,41 @@
       padding: 10px 12px 12px;
       display: flex;
       flex-direction: column;
-      gap: 7px;
+      gap: 12px;
     }
 
     .seller-item a {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       padding: 12px 14px;
       min-height: 64px;
-      border-radius: 12px;
+      border-radius: 28px;
       text-decoration: none;
       color: #0d2137;
       font-weight: 600;
       font-size: .97rem;
       border: 1.5px solid #e8f0f8;
       background: #fafbff;
-      box-shadow: inset 3px 0 0 #00aeef;
       transition: background .15s, border-color .15s, box-shadow .15s, transform .1s;
     }
 
     .seller-item a:hover {
       background: #eef4ff;
       border-color: #bad3f5;
-      box-shadow: inset 3px 0 0 #1c75bc, 0 4px 16px rgba(28, 117, 188, .13);
+      box-shadow: 0 4px 16px rgba(28, 117, 188, .13);
       transform: translateY(-1px);
     }
 
     .seller-item a:active {
       transform: translateY(0);
       background: #deeaff;
-      box-shadow: inset 3px 0 0 #1559a0;
     }
 
     .seller-name {
       display: flex;
       align-items: center;
       gap: 12px;
-      flex: 1;
-      min-width: 0;
     }
 
     .seller-logo {
@@ -261,34 +257,6 @@
       text-overflow: ellipsis;
     }
 
-    .seller-arrow {
-      width: 30px;
-      height: 30px;
-      border-radius: 9px;
-      background: #e8f0fe;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: background .15s;
-    }
-
-    .seller-item a:hover .seller-arrow,
-    .seller-item a:active .seller-arrow {
-      background: #1c75bc;
-    }
-
-    .seller-arrow svg {
-      width: 13px;
-      height: 13px;
-      stroke: #1c75bc;
-      transition: stroke .15s;
-    }
-
-    .seller-item a:hover .seller-arrow svg,
-    .seller-item a:active .seller-arrow svg {
-      stroke: #fff;
-    }
 
     /* ── Footer ── */
     .app-footer {
@@ -327,7 +295,7 @@
       .header-title { font-size: 1.9rem; }
       .app-content { padding: 36px 24px 48px; }
       .seller-card-header { padding: 20px 24px 16px; }
-      .seller-list { padding: 12px 16px 16px; gap: 8px; }
+      .seller-list { padding: 12px 16px 16px; gap: 12px; }
     }
   </style>
 </head>
@@ -382,11 +350,6 @@
                 <span class="seller-logo"><img src="../public/assets/buyers/EaseMyTrip%20Logo.svg" alt="EaseMyTrip" /></span>
                 <span class="seller-label">EaseMyTrip</span>
               </span>
-              <span class="seller-arrow">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </span>
             </a>
           </li>
           <li class="seller-item">
@@ -394,11 +357,6 @@
               <span class="seller-name">
                 <span class="seller-logo"><img src="../public/assets/buyers/miles_kilometres.png" alt="Miles &amp; Kilometres" /></span>
                 <span class="seller-label">Miles &amp; Kilometres</span>
-              </span>
-              <span class="seller-arrow">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
               </span>
             </a>
           </li>
@@ -408,11 +366,6 @@
                 <span class="seller-logo"><img src="../public/assets/buyers/nammaYatrilogo.svg" alt="Namma Yatri" /></span>
                 <span class="seller-label">Namma Yatri</span>
               </span>
-              <span class="seller-arrow">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </span>
             </a>
           </li>
           <li class="seller-item">
@@ -420,11 +373,6 @@
               <span class="seller-name">
                 <span class="seller-logo"><img src="../public/assets/buyers/rapido.jpg" alt="Rapido" /></span>
                 <span class="seller-label">Rapido</span>
-              </span>
-              <span class="seller-arrow">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
               </span>
             </a>
           </li>
@@ -434,11 +382,6 @@
                 <span class="seller-logo"><img src="../public/assets/buyers/red_bus.jpg" alt="redBus" /></span>
                 <span class="seller-label">redBus</span>
               </span>
-              <span class="seller-arrow">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </span>
             </a>
           </li>
           <li class="seller-item">
@@ -447,11 +390,6 @@
                 <span class="seller-logo"><img src="../public/assets/buyers/tummoc.png" alt="Tummoc" /></span>
                 <span class="seller-label">Tummoc</span>
               </span>
-              <span class="seller-arrow">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </span>
             </a>
           </li>
           <li class="seller-item">
@@ -459,11 +397,6 @@
               <span class="seller-name">
                 <span class="seller-logo"><img src="../public/assets/buyers/yatri_travel.jpg" alt="Yatri" /></span>
                 <span class="seller-label">Yatri</span>
-              </span>
-              <span class="seller-arrow">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
               </span>
             </a>
           </li>
