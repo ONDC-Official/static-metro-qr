@@ -201,6 +201,8 @@
       flex-direction: column;
       align-items: center;
       padding: 8px 16px calc(32px + env(safe-area-inset-bottom, 0px));
+      /* keeps the page at least phone-screen tall even with few buyer apps */
+      min-height: 55dvh;
     }
 
     /* ── Seller list ── */
