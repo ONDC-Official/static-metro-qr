@@ -469,11 +469,13 @@
 
     function renderCityList() {
       var cities = [
+        { label: 'Kochi',     slug: 'kochi' },
+        { label: 'Chennai',   slug: 'chennai' },
         { label: 'Delhi',     slug: 'delhi' },
         { label: 'Mumbai',    slug: 'mumbai' },
         { label: 'Bangalore', slug: 'bangalore' },
         { label: 'Hyderabad', slug: 'hyderabad' },
-        { label: 'Chennai',   slug: 'chennai' }
+        
       ];
       var items = cities.map(function (c) {
         return '<li class="seller-item"><a href="' + c.slug + '/">' +
