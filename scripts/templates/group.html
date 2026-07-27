@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1c75bc" />
+    <meta
+      name="description"
+      content="Buy {{GROUP_NAME}} Metro tickets from an authorised {{ORG_NAME}} seller."
+    />
+    <meta
+      property="og:title"
+      content="Metro Tickets — {{GROUP_NAME}} | {{ORG_NAME}}"
+    />
+    <meta
+      property="og:description"
+      content="Buy {{GROUP_NAME}} Metro tickets from an authorised {{ORG_NAME}} seller."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/png" href="/public/images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+    />
+    <link rel="stylesheet" href="/public/css/entity.css" />
+    <title>Metro Tickets — {{GROUP_NAME}}</title>
+    {{{GA_TAGS}}}
+    <script src="/public/js/app.js" defer></script>
+  </head>
+
+  <body {{{BODY_ATTRS}}}>
+    <div class="app-root">
+      <div id="navbar-slot"></div>
+
+      <header class="header">
+        <div class="header-hero">
+          <div class="header-logo" id="header-logo"></div>
+          <div class="header-text">
+            <h1 class="header-title" id="page-title">{{GROUP_TITLE}}</h1>
+            <p class="header-subtitle" id="page-subtitle">{{GROUP_SUBTITLE}}</p>
+          </div>
+        </div>
+      </header>
+
+      <main class="app-content" id="main-content">
+        <div class="status-wrap">
+          <p class="status-body">Loading buyer apps…</p>
+        </div>
+      </main>
+
+      <div id="footer-slot"></div>
+    </div>
+  </body>
+</html>
