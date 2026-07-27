@@ -1,0 +1,223 @@
+{
+  "site": {
+    "productName": "Metro Ticketing",
+    "orgName": "ONDC"
+  },
+  "groups": [
+    {
+      "slug": "kochi",
+      "name": "Kochi",
+      "productName": "Metro Ticketing",
+      "title": "Get Kochi Metro Digital Tickets via ONDC and Other Applications",
+      "subtitle": "Book your tickets from the below apps",
+      "logo": "https://s3-ap-south-1.amazonaws.com/kmrldata/wp-content/uploads/2022/08/12105259/KMRL-logo-300x165.gif",
+      "logoAlt": "Kochi Metro Rail Limited",
+      "buyers": [
+        {
+          "label": "EaseMyTrip",
+          "logo": "/public/images/buyers/EaseMyTrip%20Logo.svg",
+          "url": "https://www.easemytrip.com/metro/"
+        },
+        {
+          "label": "Namma Yatri",
+          "logo": "/public/images/buyers/nammaYatrilogo.svg",
+          "darkLogo": true,
+          "url": "https://nammayatri.in/u/?vp=metroBooking"
+        },
+        {
+          "label": "OneDi App",
+          "logo": "/public/images/buyers/onedi.png",
+          "url": "https://app.onedi.app/metro"
+        },
+        {
+          "label": "Paytm",
+          "logo": "/public/images/buyers/paytm.jpg",
+          "url": "https://p.paytm.me/xCTH/jr4fizp2"
+        },
+        {
+          "label": "Phonepe",
+          "logo": "/public/images/buyers/phonepe-icon.svg",
+          "url": "https://phon.pe/kochimetro"
+        },
+        {
+          "label": "Rapido",
+          "logo": "/public/images/buyers/rapido.jpg",
+          "url": "https://m.rapido.cc/Ewte/8q9jl81v"
+        },
+        {
+          "label": "redBus",
+          "logo": "/public/images/buyers/red_bus.jpg",
+          "url": "https://m6pe.app.link/6r5WCiEJ3Qb"
+        },
+        {
+          "label": "Tummoc",
+          "logo": "/public/images/buyers/tummoc.png",
+          "url": "https://0x92l.app.link/mql2Jm1fqvb"
+        },
+        {
+          "label": "Explor",
+          "logo": "/public/images/buyers/xplor.png",
+          "url": "https://internal.goxploronline.net/marketing/download?utm_source=qr&utm_medium=print&utm_content=flyer"
+        },
+        {
+          "label": "Yatri",
+          "logo": "/public/images/buyers/yatri_travel.jpg",
+          "url": "https://cutt.ly/yatri-a79"
+        },
+        {
+          "label": "Kochi1",
+          "logo": "/public/images/buyers/Kochi_1.jpeg",
+          "url": "https://play.google.com/store/apps/details?id=com.transitfe",
+          "androidUrl": "https://play.google.com/store/apps/details?id=com.transitfe",
+          "iosUrl": "https://apps.apple.com/in/app/kochi1-from-kmrl-axis-bank/id1573540630"
+        },
+        {
+          "label": "WhatsApp",
+          "logo": "/public/images/buyers/whatsapp.svg",
+          "url": "https://t.co/fJvXFbRQxc"
+        },
+        {
+          "label": "Kerala Savaari",
+          "logo": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/78/50/b0/7850b009-2605-78ad-4a82-fd73661ef75c/Placeholder.mill/400x400bb-75.webp",
+          "url": "https://keralasavaari.onelink.me/ngsh/2b2tw04k"
+        },
+        {
+          "label": "G-Wallet",
+          "logo": "https://play-lh.googleusercontent.com/dBIwyXKErXW06joSa38PfPZUfs4Ww1P0GIsi-_BCM3gfUffhuhT8EZ4XOkIs-ShPZQ=w480-h960-rw",
+          "url": "https://prutech.org/KMRL/#/manage/ticket/google"
+        }
+      ]
+    },
+    {
+      "slug": "chennai",
+      "name": "Chennai",
+      "productName": "Metro Ticketing",
+      "title": "Get Chennai Metro Digital Tickets via ONDC",
+      "subtitle": "Book your tickets from the below apps",
+      "logo": "/public/images/buyers/chennai_logo.png",
+      "logoAlt": "Chennai Metro Rail Limited",
+      "buyers": [
+        {
+          "label": "Rapido",
+          "logo": "/public/images/buyers/rapido.jpg",
+          "url": "https://m.rapido.cc/Ewte/8q9jl81v"
+        },
+        {
+          "label": "redBus",
+          "logo": "/public/images/buyers/red_bus.jpg",
+          "url": "https://m6pe.app.link/6r5WCiEJ3Qb"
+        },
+        {
+          "label": "Namma Yatri",
+          "logo": "/public/images/buyers/nammaYatrilogo.svg",
+          "darkLogo": true,
+          "url": "https://nammayatri.in/u/?vp=metroBooking"
+        },
+        {
+          "label": "Miles & Kilometres",
+          "logo": "/public/images/buyers/miles_kilometres.png",
+          "url": "https://t.me/MyMetroKochiBot"
+        }
+      ]
+    },
+    {
+      "slug": "delhi",
+      "name": "Delhi",
+      "productName": "Discover Metro",
+      "title": "Metro Tickets — Delhi",
+      "subtitle": "Choose an authorised seller to buy your ticket",
+      "footerExtended": true,
+      "buyers": [
+        {
+          "label": "Paytm",
+          "url": "https://paytm.com/metro/delhi"
+        },
+        {
+          "label": "PhonePe",
+          "url": "https://www.phonepe.com/metro"
+        },
+        {
+          "label": "Amazon",
+          "url": "https://www.amazon.in/metro"
+        }
+      ]
+    },
+    {
+      "slug": "bangalore",
+      "name": "Bangalore",
+      "productName": "Metro Ticketing",
+      "title": "Get Bangalore Metro Digital Tickets via ONDC",
+      "subtitle": "Book your tickets from the below apps",
+      "logo": "/public/images/buyers/banglore_metro.svg.webp",
+      "logoAlt": "Bangalore Metro Rail Corporation Limited",
+      "buyers": [
+        {
+          "label": "EaseMyTrip",
+          "logo": "/public/images/buyers/EaseMyTrip%20Logo.svg",
+          "url": "https://www.easemytrip.com/metro/"
+        },
+        {
+          "label": "Namma Yatri",
+          "logo": "/public/images/buyers/nammaYatrilogo.svg",
+          "darkLogo": true,
+          "url": "https://nammayatri.in/u/?vp=metroBooking"
+        },
+        {
+          "label": "OneDi App",
+          "logo": "/public/images/buyers/onedi.png",
+          "url": "https://app.onedi.app/metro"
+        },
+        {
+          "label": "Paytm",
+          "logo": "/public/images/buyers/paytm.jpg",
+          "url": "https://p.paytm.me/xCTH/jr4fizp2"
+        },
+        {
+          "label": "Phonepe",
+          "logo": "/public/images/buyers/phonepe-icon.svg",
+          "url": "https://phon.pe/kochimetro"
+        }
+      ]
+    },
+    {
+      "slug": "mumbai",
+      "name": "Mumbai",
+      "productName": "Discover Metro",
+      "title": "Metro Tickets — Mumbai",
+      "subtitle": "Choose an authorised seller to buy your ticket",
+      "footerExtended": true,
+      "buyers": [
+        {
+          "label": "Paytm",
+          "url": "https://paytm.com/metro/mumbai"
+        },
+        {
+          "label": "PhonePe",
+          "url": "https://www.phonepe.com/metro"
+        },
+        {
+          "label": "Zomato",
+          "url": "https://www.zomato.com"
+        }
+      ]
+    },
+    {
+      "slug": "hyderabad",
+      "name": "Hyderabad",
+      "productName": "Discover Metro",
+      "title": "Metro Tickets — Hyderabad",
+      "subtitle": "Choose an authorised seller to buy your ticket",
+      "footerExtended": true,
+      "buyers": [
+        {
+          "label": "Paytm",
+          "url": "https://paytm.com/metro/hyderabad"
+        },
+        {
+          "label": "Amazon",
+          "url": "https://www.amazon.in/metro"
+        }
+      ]
+    }
+  ]
+}

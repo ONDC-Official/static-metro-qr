@@ -29,6 +29,16 @@ npm-debug.log*
 # Dependencies (if tooling is added later)
 node_modules/
 
-# Build output (if a build step is added later)
+# Build output
 dist/
 build/
+_site/
+
+# Generated HTML (from scripts/generate.mjs) — every top-level directory is
+# a build-output group folder except these fixed project directories.
+/index.html
+/*/
+!/public/
+!/data/
+!/scripts/
+!/.github/
