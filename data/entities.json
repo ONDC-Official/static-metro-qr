@@ -176,6 +176,51 @@
           "label": "Phonepe",
           "logo": "/public/images/buyers/phonepe-icon.svg",
           "url": "https://phon.pe/kochimetro"
+        },
+        {
+          "label": "Uber",
+          "logo": "/public/images/buyers/uber.svg",
+          "url": "https://www.uber.com/in/en/r/cities/bangalore/metro"
+        },
+        {
+          "label": "Rapido",
+          "logo": "/public/images/buyers/rapido.jpg",
+          "url": "https://rapido.bike/metro/bangalore"
+        },
+        {
+          "label": "Tripozo",
+          "logo": "/public/images/buyers/tripozo.svg",
+          "url": "https://www.tripozo.com/metro/bangalore"
+        },
+        {
+          "label": "Ixigo",
+          "logo": "/public/images/buyers/ixigo.svg",
+          "url": "https://www.ixigo.com/metro/bangalore"
+        },
+        {
+          "label": "redBus",
+          "logo": "/public/images/buyers/red_bus.jpg",
+          "url": "https://www.redbus.in/metro/bangalore"
+        },
+        {
+          "label": "Oneticket",
+          "logo": "/public/images/buyers/oneticket.svg",
+          "url": "https://www.oneticket.in/metro/bangalore"
+        },
+        {
+          "label": "Navi",
+          "logo": "/public/images/buyers/navi.svg",
+          "url": "https://navi.com/metro/bangalore"
+        },
+        {
+          "label": "Magicpin",
+          "logo": "/public/images/buyers/magicpin.svg",
+          "url": "https://magicpin.in/metro/bangalore"
+        },
+        {
+          "label": "DMRC Sarthi",
+          "logo": "/public/images/buyers/dmrc_sarthi.svg",
+          "url": "https://www.delhimetrorail.com/sarthi"
         }
       ]
     },

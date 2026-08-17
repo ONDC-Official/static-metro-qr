@@ -34,7 +34,7 @@
     );
   }
 
-  var dataPromise = fetch(DATA_URL).then(function (res) {
+  var dataPromise = fetch(DATA_URL, { cache: "no-cache" }).then(function (res) {
     if (!res.ok) throw new Error("Failed to load " + DATA_URL);
     return res.json();
   });
@@ -73,9 +73,11 @@
   }
 
   function findBySlug(list, slug) {
-    return (list || []).find(function (item) {
-      return item.slug === slug;
-    });
+    var items = list || [];
+    for (var i = 0; i < items.length; i++) {
+      if (items[i].slug === slug) return items[i];
+    }
+    return null;
   }
 
   function logoLabel(label, logoUrl, darkLogo) {
